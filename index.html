@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ENSI Teck - Boutique Informatique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="acceuil.css">
+</head>
+<body>
+
+  <header class="moving-gradient">
+    <div class="logo">
+      <span class="logo-text">ENSI <span class="logo-accent">Teck</span></span>
+    </div>
+    <nav>
+      <ul class="nav-menu" id="navbar">
+        <li><button onclick="showTab('home')" class="nav-button"><i class="fas fa-home"></i> Accueil</button></li>
+        <li><button onclick="showTab('ordinateur')" class="nav-button"><i class="fas fa-desktop"></i> Ordinateurs</button></li>
+        <li><button onclick="showTab('souris')" class="nav-button"><i class="fas fa-mouse"></i> Souris</button></li>
+        <li><button onclick="showTab('clavier')" class="nav-button"><i class="fas fa-keyboard"></i> Claviers</button></li>
+        <li><button onclick="showTab('microcasque')" class="nav-button"><i class="fas fa-headphones"></i> Micro-casques</button></li>
+        <li><button onclick="showTab('imprimante')" class="nav-button"><i class="fas fa-print"></i> Imprimantes</button></li>
+      </ul>
+    </nav>
+    <button class="cart-button" onclick="showTab('panier')" title="Panier">
+      <i class="fas fa-shopping-cart fa-2x"></i>
+      <span id="cart-count" class="cart-count">0</span>
+    </button>
+  </header>
+
+  <!-- Main Content Tabs -->
+  <main>
+    <!-- Accueil -->
+    <div id="home" class="tab-content active">
+
+      <div class="hero-banner">
+        <div class="hero-content">
+          <h1 class="hero-title">Bienvenue sur ENSI Teck</h1>
+          <p class="hero-text">Découvrez notre site e-commerce créé par des étudiants pour la communauté ENSI ! Profitez d'une variété d'ordinateurs, périphériques et accessoires high-tech avec gestion de stock en temps réel.</p>
+          <p class="hero-subtext">Une expérience moderne, fluide et fiable pour satisfaire tous vos besoins technologiques.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="mailto:ensi.teck@gmail.com" class="social-icon"><i class="fas fa-envelope fa-lg"></i></a>
+          </div>
+        </div>
+        <div class="hero-carousel">
+          <!-- Carrousel -->
+          <div class="carousel">
+            <div id="carouselImages" class="carousel-container">
+              <img src="https://images.stockcake.com/public/1/6/d/16d5bbe0-b90e-4de4-b940-12cf4ffa87f4_large/purple-gaming-paradise-stockcake.jpg" 
+              class="carousel-img" alt="Gaming Ordinateur">
+              <img src="https://m.media-amazon.com/images/I/6158cspby2L._AC_UF894,1000_QL80_.jpg"
+              class="carousel-img hidden" alt="Souris RGB">
+              <img src="https://m.media-amazon.com/images/I/815XJdl7fXL._AC_UF1000,1000_QL80_.jpg"
+              class="carousel-img hidden" alt="Clavier mécanique">
+              <img src="https://m.media-amazon.com/images/I/71nh1VxLzuL._AC_UF894,1000_QL80_.jpg"
+              class="carousel-img hidden" alt="Micro casque">
+              <img src="https://cdn.thewirecutter.com/wp-content/media/2024/08/homeprinters-2048px-02580-1.jpg"
+              class="carousel-img hidden" alt="Imprimante couleur">
+            </div>
+            <button onclick="carouselPrev()" class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="carouselNext()" class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <span class="carousel-dot active"></span>
+              <span class="carousel-dot"></span>
+              <span class="carousel-dot"></span>
+              <span class="carousel-dot"></span>
+              <span class="carousel-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="categories-section">
+        <h2 class="section-title">Nos Catégories Populaires</h2>
+        <div class="categories-grid">
+          <div class="category-card">
+            <img src="https://i.ytimg.com/vi/u0ydChHnvt4/maxresdefault.jpg" class="category-img" alt="Ordinateurs">
+            <button class="category-btn" onclick="showTab('ordinateur')">Ordinateurs</button>
+          </div>
+          <div class="category-card">
+            <img src="https://m.media-amazon.com/images/I/6158cspby2L._AC_UF894,1000_QL80_.jpg" class="category-img" alt="Souris">
+            <button class="category-btn" onclick="showTab('souris')">Souris</button>
+          </div>
+          <div class="category-card">
+            <img src="https://m.media-amazon.com/images/I/815XJdl7fXL._AC_UF1000,1000_QL80_.jpg" class="category-img" alt="Claviers">
+            <button class="category-btn" onclick="showTab('clavier')">Claviers</button>
+          </div>
+          <div class="category-card">
+            <img src="https://m.media-amazon.com/images/I/71nh1VxLzuL._AC_UF894,1000_QL80_.jpg" class="category-img" alt="Micro casques">
+            <button class="category-btn" onclick="showTab('microcasque')">Micro-casques</button>
+          </div>
+          <div class="category-card">
+            <img src="https://cdn.thewirecutter.com/wp-content/media/2024/08/homeprinters-2048px-02580-1.jpg" class="category-img" alt="Imprimantes">
+            <button class="category-btn" onclick="showTab('imprimante')">Imprimantes</button>
+          </div>
+        </div>
+      </section>
+    </div> <!-- End home -->
+
+    <!-- Pages Produits : Les données sont gérées en JS & PHP pour le stock -->
+    <!-- Ordinateurs -->
+    <div id="ordinateur" class="tab-content">
+      <h2 class="page-title">Ordinateurs</h2>
+      <div id="produits-ordinateurs" class="products-grid"></div>
+    </div>
+    <!-- Souris -->
+    <div id="souris" class="tab-content">
+      <h2 class="page-title">Souris</h2>
+      <div id="produits-souris" class="products-grid"></div>
+    </div>
+    <!-- Claviers -->
+    <div id="clavier" class="tab-content">
+      <h2 class="page-title">Claviers</h2>
+      <div id="produits-clavier" class="products-grid"></div>
+    </div>
+    <!-- Micro-casques -->
+    <div id="microcasque" class="tab-content">
+      <h2 class="page-title">Micro-casques</h2>
+      <div id="produits-microcasque" class="products-grid"></div>
+    </div>
+    <!-- Imprimantes -->
+    <div id="imprimante" class="tab-content">
+      <h2 class="page-title">Imprimantes</h2>
+      <div id="produits-imprimante" class="products-grid"></div>
+    </div>
+    <!-- Panier -->
+    <div id="panier" class="tab-content">
+      <h2 class="page-title">Votre panier</h2>
+      <div id="panier-content"></div>
+      <form id="form-paiement" class="payment-form hidden">
+        <h3 class="payment-title">Paiement sécurisé</h3>
+        <div class="form-group">
+          <label class="form-label">Nom complet</label>
+          <input type="text" name="nom" required class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Numéro de carte</label>
+          <input type="text" maxlength="19" pattern="\d{16,19}" name="carte" required class="form-input">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Date d'expiration</label>
+            <input type="text" maxlength="5" pattern="\d{2}/\d{2}" placeholder="MM/AA" name="date" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">CVC</label>
+            <input type="text" maxlength="4" pattern="\d{3,4}" name="cvc" required class="form-input">
+          </div>
+        </div>
+        <button type="submit" class="payment-button">Payer</button>
+        <div id="paiement-message" class="payment-message"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-text">
+      <span class="footer-brand">ENSI Teck</span>
+      • Projet étudiant 2024 • Tous droits réservés
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/" target="_blank" class="footer-icon"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" class="footer-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank" class="footer-icon"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:ensi.teck@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script>
+  // Fake backend: Listes des produits par catégorie + stock
+  const produits = {
+    ordinateur: [
+      {
+        nom:"PC Gamer RGB Ryzen 7/RTX", prix:1599, 
+        image:"https://images.stockcake.com/public/1/6/d/16d5bbe0-b90e-4de4-b940-12cf4ffa87f4_large/purple-gaming-paradise-stockcake.jpg",
+        stock: 3, description:"Puissant PC gaming avec Ryzen 7, RTX 4060, 32Go RAM, 1To SSD."
+      },
+      {
+        nom:"Apple Macbook Air M2", prix:1150,
+        image:"https://www.apple.com/newsroom/images/product/mac/standard/Apple_MacBook-Air-M2_2up-hero-220606.jpg.og.jpg",
+        stock: 6, description:"Macbook Air avec puce Apple M2, 8Go, 256Go SSD, 13 pouces."
+      },
+      {
+        nom:"HP Pavilion 15", prix:900,
+        image:"https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06948064.png",
+        stock: 0, description:"Portable HP, Intel i5, 16Go, 512Go SSD, écran 15.6'' FHD."
+      }
+    ],
+    souris: [
+      {
+        nom:"Logitech G502 HERO", prix:55,
+        image:"https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_UF894,1000_QL80_.jpg",
+        stock: 8, description:"Capteur HERO 25K, RGB, 11 boutons programmables."
+      },
+      {
+        nom:"SteelSeries Rival 3", prix:35,
+        image:"https://cdn.shopify.com/s/files/1/0286/3966/4466/products/44b0e5c3fad740b55b78c7a6a168ccfb_600x600.jpg",
+        stock: 5, description:"Souris RGB ultra-légère, capteur 8500 CPI, RGB Prism."
+      },
+      {
+        nom:"Razer Viper Mini", prix:48,
+        image:"https://assets2.razerzone.com/images/pnx.assets/3a6700ffe3ec9d7b98ff251908d9bbc2/viper-mini-500-main.png",
+        stock: 1, description:"Ultra-légère, 61g, profil e-sports, RGB."
+      }
+    ],
+    clavier: [
+      {
+        nom:"Razer BlackWidow V4", prix:209,
+        image:"https://m.media-amazon.com/images/I/815XJdl7fXL._AC_UF1000,1000_QL80_.jpg",
+        stock: 2, description:"Mécanique RGB, compact, switches orange tactiles."
+      },
+      {
+        nom:"Logitech MX Keys", prix:98,
+        image:"https://resource.logitech.com/d_transparent.gif/http://www.logitech.com/assets/65463/11/mx-keys-graphite.png",
+        stock: 10, description:"Clavier moderne, rétro-éclairage automatique, Bluetooth."
+      },
+      {
+        nom:"Corsair K70 RGB Pro", prix:165,
+        image:"https://m.media-amazon.com/images/I/71GIaV46CvL._AC_UF894,1000_QL80_.jpg",
+        stock: 4, description:"Switchs Cherry MX Red, RGB, Hyper-polling 8,000Hz."
+      }
+    ],
+    microcasque: [
+      {
+        nom:"Logitech G435 Lightspeed", prix:69,
+        image:"https://m.media-amazon.com/images/I/81bQEkMevBL._AC_UF894,1000_QL80_.jpg",
+        stock: 7, description:"Bluetooth, Léger, micro intégré, RGB."
+      },
+      {
+        nom:"SteelSeries Arctis Nova 1", prix:69,
+        image:"https://cdn.shopify.com/s/files/1/0286/3966/4466/products/04bbebbc19034e1a998f442159acba4e_600x600.jpg",
+        stock: 0, description:"Son haute fidélité, ComfortMAX, micro ClearCast Gen 2."
+      },
+      {
+        nom:"HyperX Cloud II", prix:89,
+        image:"https://media.kingston.com/hyperx/product/hx-product-headset-cloudii-rd-1-lg.jpg",
+        stock: 2, description:"7.1 virtuelle, micro détachable, confort premium"
+      }
+    ],
+    imprimante: [
+      {
+        nom:"Canon imageClass MF656Cdw", prix:389,
+        image:"https://pisces.bbystatic.com/prescaled/540/960/image2/BestBuy_US/images/videos/d0cbd3f3-0d49-49c4-8820-5ab3e48c8a02.jpg",
+        stock: 5, description:"Laser couleur All-in-One, WiFi, impression recto/verso."
+      },
+      {
+        nom:"HP Color LaserJet Pro 4201dw", prix:479,
+        image:"https://m.media-amazon.com/images/I/51Sgu8HxR3L._AC_UF894,1000_QL80_.jpg",
+        stock: 0, description:"Laser couleur, WiFi, impression rapide, sécurité renforcée."
+      },
+      {
+        nom:"Brother HL-L3280CDW", prix:389,
+        image:"https://www.brother-usa.com/-/media/brother/product-catalog-media/images/2023/09/18/18/10/spinner_hl-l3280cdw_1.jpg",
+        stock: 2, description:"Laser couleur, compact, AirPrint, WiFi Direct."
+      }
+    ]
+  };
+
+  // PANIER = liste des produits {categorie, index, qte}
+  let panier = [];
+  function renderProduits(categorie, parentId) {
+    const out = [];
+    produits[categorie].forEach((p, idx) => {
+      let stockStr = p.stock > 0?
+        `<span class="stock-badge in-stock"><i class='fas fa-check-circle'></i>En stock (${p.stock})</span>`
+        : `<span class="stock-badge out-stock"><i class='fas fa-times-circle'></i>Rupture</span>`;
+      let disable = (p.stock>0)?"":"disabled";
+      out.push(`
+        <div class="product-card">
+          <img src="${p.image}" alt="${p.nom}" class="product-img">
+          <div class="product-details">
+            <div class="product-header">
+              <h4 class="product-name">${p.nom}</h4>
+              <span class="product-price">€${p.prix}</span>
+            </div>
+            <p class="product-desc">${p.description}</p>
+            <div class="product-footer">
+              ${stockStr}
+              <button onclick="addToCart('${categorie}',${idx})" class="add-cart-btn" ${disable}>Ajouter <i class="fas fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+      `);
+    });
+    document.getElementById(parentId).innerHTML = out.join('');
+  }
+
+  function addToCart(cat, idx){
+    if(produits[cat][idx].stock<1) return;
+    let found = panier.find(x=>x.cat===cat && x.idx===idx);
+    if(found){
+      if(found.qte<produits[cat][idx].stock) found.qte++;
+    }else{
+      panier.push({cat:cat, idx:idx, qte:1});
+    }
+    renderCart();
+  }
+
+  function removeFromCart(cat, idx){
+    let pos = panier.findIndex(x=>x.cat===cat && x.idx===idx);
+    if(pos!==-1) {
+      panier.splice(pos,1);
+      renderCart();
+    }
+  }
+
+  function changeQuantity(cat, idx, inc){
+    let item = panier.find(x=>x.cat==cat&&x.idx==idx);
+    if(!item) return;
+    let prod = produits[cat][idx];
+    if(inc>0 && item.qte<prod.stock) item.qte++;
+    if(inc<0 && item.qte>1) item.qte--;
+    renderCart();
+  }
+
+  function renderCart(){
+    // recalc stock en JS sur page, mais en vrai il est géré en backend/PHP
+    document.getElementById('cart-count').textContent = panier.reduce((a,b)=>a+b.qte,0);
+    const area = document.getElementById('panier-content');
+    if(panier.length===0){
+      area.innerHTML = `<p class="empty-cart">Votre panier est vide.</p>`;
+      document.getElementById('form-paiement').classList.add('hidden');
+      return;
+    }
+    let total = 0;
+    let rows = panier.map(item=>{
+      let prod = produits[item.cat][item.idx];
+      let s = `
+        <div class="cart-item">
+          <img src="${prod.image}" alt="${prod.nom}" class="cart-item-img">
+          <div class="cart-item-details">
+              <h4 class="cart-item-name">${prod.nom}</h4>
+              <span class="cart-item-price">Prix: <b>€${prod.prix}</b> x <span class="font-bold">${item.qte}</span></span>
+              <div class="cart-item-quantity">
+                <button onclick="changeQuantity('${item.cat}',${item.idx},-1)" class="qty-btn">-</button>
+                <span>${item.qte}</span>
+                <button onclick="changeQuantity('${item.cat}',${item.idx},1)" class="qty-btn">+</button>
+                <span class="stock-info ${(prod.stock-item.qte)<=1?'low-stock':''}">stock restant: ${prod.stock-item.qte}</span>
+              </div>
+          </div>
+          <div class="cart-item-actions">
+            <b class="cart-item-total">€${prod.prix*item.qte}</b>
+            <button onclick="removeFromCart('${item.cat}',${item.idx})" class="remove-btn"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      `;
+      total += prod.prix*item.qte;
+      return s;
+    }).join('');
+    area.innerHTML = rows + `<div class="cart-total">Total à payer: €${total}</div>`;
+    document.getElementById('form-paiement').classList.remove('hidden');
+  }
+
+  // Carrousel accueil
+  let carouselIdx = 0;
+  function carouselShow(i){
+    const imgs = document.querySelectorAll('.carousel-img');
+    const dots = document.querySelectorAll('.carousel-dot');
+    for(let k=0;k<imgs.length;k++){
+      imgs[k].classList.add('hidden');
+      dots[k].classList.remove('active');
+    }
+    imgs[i].classList.remove('hidden');
+    dots[i].classList.add('active');
+  }
+  function carouselNext(){carouselIdx=(carouselIdx+1)%5;carouselShow(carouselIdx);}
+  function carouselPrev(){carouselIdx=(carouselIdx+4)%5;carouselShow(carouselIdx);}
+  setInterval(carouselNext,6500);
+
+  // Navigation Tabs
+  function showTab(tab){
+    document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
+    document.getElementById(tab).classList.add('active');
+    // Render produits dynamically when needed
+    if(['ordinateur','souris','clavier','microcasque','imprimante'].includes(tab)){
+      renderProduits(tab, 'produits-'+tab);
+    }
+    if(tab==='panier') renderCart();
+    scrollTo(0,0);
+  }
+
+  // Render default on load
+  window.onload = function(){
+    carouselShow(0);
+    // preload all product images for smooth experience
+    for(let cat in produits){
+      produits[cat].forEach(obj=>{
+        let i = new Image(); i.src=obj.image;
+      });
+    }
+    renderCart();
+    renderProduits('ordinateur', 'produits-ordinateur');
+    renderProduits('souris', 'produits-souris');
+    renderProduits('clavier', 'produits-clavier');
+    renderProduits('microcasque', 'produits-microcasque');
+    renderProduits('imprimante', 'produits-imprimante');
+  }
+
+  // Gestion soumission paiement 
+  document.getElementById('form-paiement').onsubmit = function(e){
+    e.preventDefault();
+    if(panier.length==0){
+      document.getElementById('paiement-message').innerHTML = "<span class='error-message'>Votre panier est vide.</span>";
+      return false;
+    }
+    // Simuler stockage en JS (en prod: AJAX vers PHP)
+    let ok = true, msg = '';
+    panier.forEach(item=>{
+      if(item.qte > produits[item.cat][item.idx].stock){
+        ok = false;
+        msg += produits[item.cat][item.idx].nom+" n'a plus assez de stock.<br>";
+      }
+    });
+    if(!ok){
+      document.getElementById('paiement-message').innerHTML = "<span class='error-message'>"+msg+"</span>";
+      return false;
+    }
+    // Décompte local en JS (in real app: on attend la réponse du serveur PHP pour soustraire le stock)
+    panier.forEach(item=>{
+      produits[item.cat][item.idx].stock -= item.qte;
+    });
+    panier = [];
+    renderCart();
+    document.getElementById('paiement-message').innerHTML = "<span class='success-message'>Paiement validé, merci pour votre achat !</span>";
+    // refresh produits "en stock"
+    renderProduits('ordinateur', 'produits-ordinateur');
+    renderProduits('souris', 'produits-souris');
+    renderProduits('clavier', 'produits-clavier');
+    renderProduits('microcasque', 'produits-microcasque');
+    renderProduits('imprimante', 'produits-imprimante');
+    // Hide paiement form after 2.5s
+    setTimeout(()=>{document.getElementById('paiement-message').textContent='';showTab('home');}, 2500);
+    return false;
+  }
+  </script>
+</body>
+</html>
